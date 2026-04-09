@@ -1,0 +1,133 @@
+:root {
+  --alarmalade: #f25533;
+  --yellow-400: #facc15;
+  --sand: #f1ebe2;
+  --light-sand: #f8f5f0;
+  --charcoal: #161618;
+  --page-bg: #f1ebe2;
+  --panel-left: #0c0c0e;
+  --panel-right: #f8f5f0;
+  --text-primary: #161618;
+  --text-inverse: #f8f5f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg: #161618;
+    --panel-right: #1c1c1f;
+    --text-primary: #f8f5f0;
+  }
+}
+
+html.light {
+  --page-bg: #f1ebe2;
+  --panel-right: #f8f5f0;
+  --text-primary: #161618;
+}
+
+html.dark {
+  --page-bg: #161618;
+  --panel-right: #1c1c1f;
+  --text-primary: #f8f5f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-inter), "Inter", sans-serif;
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-inter), "Inter", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.login-shell {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 15% 80%, rgba(242, 85, 51, 0.22), transparent 32%),
+    radial-gradient(circle at 80% 12%, rgba(250, 204, 21, 0.13), transparent 28%),
+    var(--page-bg);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 1080px;
+  min-height: 620px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.hero-panel {
+  position: relative;
+  background: var(--panel-left);
+  color: var(--text-inverse);
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.hero-stripes {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  opacity: 0.32;
+}
+
+.hero-stripes span {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0) 68%,
+    rgba(255, 255, 255, 0.27) 100%
+  );
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 46%;
+  background:
+    radial-gradient(circle at 22% 86%, rgba(242, 85, 51, 0.8), transparent 54%),
+    radial-gradient(circle at 34% 100%, rgba(248, 245, 240, 0.8), transparent 35%);
+  filter: blur(10px);
+}
+
+.form-panel {
+  background: var(--panel-right);
+}
+
+@media (max-width: 960px) {
+  .login-shell {
+    padding: 16px;
+  }
+
+  .login-card {
+    min-height: unset;
+  }
+}
